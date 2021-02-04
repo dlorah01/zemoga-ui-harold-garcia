@@ -1,0 +1,40 @@
+<section class="zmg-card" [ngStyle]="{'background-image': 'linear-gradient(to bottom, transparent, rgba(0,0,0, 0.7)), url(' + cardInfo.backgroundUrl + ')'}">
+    <div class="zmg-card-body">
+      <div class="zmg-card-content">
+        <h2 class="zmg-card-name zmg-text-regular">
+          <div class="zmg-card-mark zmg-text-center zmg-text-xs zmg-vote-down">
+            <i *ngIf="cardInfo.votes.thumbsUp>=cardInfo.votes.thumbsDown" class="fas fa-thumbs-up"></i>
+            <i *ngIf="cardInfo.votes.thumbsUp<cardInfo.votes.thumbsDown" class="fas fa-thumbs-down"></i>
+          </div>
+          {{ cardInfo.name }}
+        </h2>
+        <p class="zmg-text-xs"><span class="zmg-text-bold">1 month ago</span> in {{ cardInfo.category }}</p>
+        <p class="zmg-card-content-description" *ngIf="showVotes">Volutpat ultrices nibh sociosqu in risus suscipit nascetur, taciti aptent condimentum convallis imperdiet fringilla.</p>
+        
+        <form class="zmg-card-form" (ngSubmit)="submit()" [formGroup]="voteForm" *ngIf="showVotes">
+          <div class="zmg-card-input-content">
+            <input type="radio" id="thumbsUp{{index}}" [value]="true" class="zmg-card-input" formControlName="thumb">
+            <label class="zmg-btn zmg-vote-up" [class.zmg-btn-focus]="voteForm.get('thumb').value" for="thumbsUp{{index}}">
+              <i class="fas fa-thumbs-up"></i>
+            </label>
+          </div>
+          <div class="zmg-card-input-content">
+          <input type="radio" id="thumbsDown{{index}}" [value]="false" class="zmg-card-input" formControlName="thumb">
+            <label class="zmg-btn zmg-vote-down" [class.zmg-btn-focus]="voteForm.get('thumb').value === false" for="thumbsDown{{index}}">
+              <i class="fas fa-thumbs-down"></i>
+            </label>
+          </div>
+          <button type="submit" class="zmg-btn-white" [disabled]="voteForm?.pristine">Vote now</button>
+        </form>
+  
+        <div class="zmg-success-vote" *ngIf="!showVotes">
+          <p class="zmg-text-md">Thank you for voting!</p>
+          <button type="button" class="zmg-btn-white" (click)="showVotes = true">Vote again</button>
+        </div>
+      </div>
+    </div>
+    <div class="zmg-card-footer">
+      <zmg-progress-bar [votes]=cardInfo.votes></zmg-progress-bar>
+    </div>
+  </section>
+  

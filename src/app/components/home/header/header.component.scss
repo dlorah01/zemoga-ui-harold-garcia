@@ -1,0 +1,149 @@
+@import 'variables';
+@import 'breakpoints-mixin';
+
+$zmg-nav-height: 100px;
+$zmg-card-bg: rgba(#525151, .9);
+
+header.zmg-header {
+  align-items: center;
+  background-image:
+    url('../../../../assets/papa-francisco.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: $zmg-color-white !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  nav.zmg-header-nav {
+    display: flex;
+    height: $zmg-nav-height;
+    justify-content: space-between;
+    background-image:
+    linear-gradient(to bottom, rgba($zmg-color-dark, 0.3), transparent);
+    z-index: 2;
+  }
+  h3.zmg-header-h3 {
+    line-height: $zmg-nav-height;
+  }
+  ul.zmg-header-menu {
+    display: none;
+    @include zmg-media-breakpoint-up($zmg-md) {
+      display: flex;
+      font-size: $zmg-font-s;
+      line-height: $zmg-nav-height;
+      justify-content: flex-end;
+      li:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.zmg-header-menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include zmg-media-breakpoint-up($zmg-md) {
+    display: none;
+  }
+}
+
+.zmg-header-card-section {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  .zmg-header-card {
+    min-height: 350px;
+    width: 100%;
+    @include zmg-media-breakpoint-up($zmg-l) {
+      width: 40%;
+    }
+  }
+  .zmg-header-card-section {
+    background-color: $zmg-card-bg;
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+  }
+  .zmg-header-card-header {
+    h1 {
+      font-weight: 400;
+    }
+    p {
+      font-size: $zmg-font-xs;
+    }
+    padding-top:1.5rem;
+    margin-top: $zmg-nav-height - 50px;
+  }
+  .zmg-header-card-wiki {
+    align-items: center;
+    display: flex;
+    padding-top: 2rem;
+  }
+  a.zmg-header-card-wiki-more-info {
+    display: inline-block;
+    font-size: $zmg-font-xs;
+    line-height: 20px;
+    padding-left: 0.5rem;
+    text-decoration: underline;
+  }
+  .zmg-header-card-footer{
+    .zmg-text-bold{
+      padding-bottom: 1.5rem;
+    }
+  }
+  .zmg-header-card-footer-votes {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: $zmg-nav-height - 50px;
+    .zmg-header-thumbs {
+      flex: 1;
+      font-size: 2rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .zmg-header-thumbs-up {
+      background-color: rgba($zmg-color-yellow, .8);
+    }
+    .zmg-header-thumbs-down {
+      background-color: rgba($zmg-color-green, .8);
+    }
+  }
+}
+
+.zmg-header-closing-section {
+  align-items: center;
+  display: flex;
+  min-height: 3rem;
+  width: 100%;
+  .zmg-header-closing {
+    background-color: rgba($zmg-color-white, 0.3);
+    color: $zmg-color-dark;
+    flex: 1;
+    line-height: 3rem;
+    padding: 0 0.5rem;
+    position: relative;
+    &:first-child {
+      background-color: rgba($zmg-color-dark, 0.3);
+      color: $zmg-color-white;
+      &:after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 10px);
+        bottom: 0;
+        right: 0;
+        margin-right: -10px;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid rgba($zmg-color-dark, 0.5);
+      }
+    }
+  }
+}

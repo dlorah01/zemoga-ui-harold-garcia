@@ -1,0 +1,23 @@
+// font weight
+.zmg-text-thin { font-weight: 100; }
+.zmg-text-light { font-weight: 300; }
+.zmg-text-regular { font-weight: 400; }
+.zmg-text-bold { font-weight: 700; }
+.zmg-text-black { font-weight: 900; }
+
+// font size
+.zmg-text-xs { font-size: $zmg-font-xs; }
+.zmg-text-s { font-size: $zmg-font-s; }
+.zmg-text-md { font-size: $zmg-font-m; }
+.zmg-text-l { font-size: $zmg-font-l; }
+.zmg-text-xl { font-size: $zmg-font-xl; }
+
+// text align
+.zmg-text-center { text-align: center; }
+.zmg-text-right { text-align: right; }
+.zmg-text-left { text-align: left; }
+.zmg-text-justify { text-align: justify; }
+
+// text transform
+.zmg-text-capitalize { text-transform: capitalize; }
+.zmg-text-uppercase { text-transform: uppercase; }

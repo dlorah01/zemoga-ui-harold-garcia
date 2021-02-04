@@ -1,0 +1,41 @@
+%button {
+  background-color: transparent;
+  border: 2px solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: $zmg-font-s;
+  height: $zmg-btn-height;
+  min-width: $zmg-btn-min-width;
+  padding: 0.5rem;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.zmg-btn {
+  @extend %button;
+  border-color: transparent;
+  height: auto;
+  color: $zmg-color-white;
+  min-width: 0;
+  &:hover {
+    border-color: $zmg-color-white;
+    opacity: 0.7;
+  }
+}
+
+.zmg-btn-white {
+  @extend %button;
+  border-color: $zmg-color-white;
+  color: $zmg-color-white;
+}
+
+.zmg-btn-dark {
+  @extend %button;
+  border-color: $zmg-color-dark;
+  color: $zmg-color-dark;
+}

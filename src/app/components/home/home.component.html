@@ -1,0 +1,18 @@
+<zmg-header></zmg-header>
+<section class="container zmg-home">
+  <zmg-toast></zmg-toast>
+
+  <h2 class="zmg-home-title">Votes</h2>
+
+  <section class="row">
+    <div *ngFor="let item of cards; let i = index" class="col-12 col-lg-6">
+      <zmg-card [cardInfo]=item [index]=i></zmg-card>
+    </div>
+  </section>
+
+  <div class="zmg-home-submit">
+    <p class="zmg-home-submit-qs zmg-text-l">Is there anyone else you want ud to add?</p>
+    <button class="zmg-btn-dark">Submit a name</button>
+  </div>
+</section>
+<zmg-footer></zmg-footer>

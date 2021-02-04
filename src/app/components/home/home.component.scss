@@ -1,0 +1,36 @@
+
+@import 'variables';
+@import 'breakpoints-mixin';
+
+.zmg-home {
+  padding: 3rem 0;
+  .zmg-home-title {
+    padding: 3rem 1.5rem;
+    @include zmg-media-breakpoint-up($zmg-md) {
+        padding: 3rem 0;
+    }
+  }
+  .zmg-home-submit {
+    background-image:
+      linear-gradient(to bottom, rgba($zmg-color-white, 0.7), rgba($zmg-color-white, 0.7)),
+      url('../../../assets/multitud.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    @include zmg-media-breakpoint-up($zmg-md) {
+      align-items: center;
+      flex-direction: row;
+    }
+    .zmg-home-submit-qs {
+      color: rgba($zmg-color-dark, 0.8);
+      flex: 1;
+      padding-bottom: 2rem;
+      @include zmg-media-breakpoint-up($zmg-md) {
+          padding: 0;
+      }
+    }
+  }
+}

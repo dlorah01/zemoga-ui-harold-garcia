@@ -1,0 +1,11 @@
+<div class="zmg-progress-bar">
+    <div class="zmg-progress-bar-value zmg-progress-bar-up zmg-text-md" [ngStyle]="{ 'width': thumbsUp + '%'}">
+      <i class="fas fa-thumbs-up"></i>
+      <div class="zmg-thumbs-up-value">{{ votes.thumbsUp / votes.total | percent }}</div>
+    </div>
+    <div class="zmg-progress-bar-value zmg-progress-bar-down zmg-text-md zmg-text-right" [ngStyle]="{ 'width': thumbsDown + '%'}">
+      <div class="zmg-thumbs-up-value">{{ votes.thumbsDown / votes.total | percent }}</div>
+      <i class="fas fa-thumbs-up"></i>
+    </div>
+  </div>
+  

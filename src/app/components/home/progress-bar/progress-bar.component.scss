@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'breakpoints-mixin';
+
+$zmg-progress-bar-height: 40px;
+
+.zmg-progress-bar {
+  box-sizing: border-box;
+  display: flex;
+  min-height: $zmg-progress-bar-height;
+  width: 100%;
+  .zmg-progress-bar-value {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+  .zmg-progress-bar-up {
+    background-color: rgba($zmg-color-green, .7);
+  }
+  .zmg-progress-bar-down {
+    background-color: rgba($zmg-color-yellow, .7);
+    justify-content: flex-end;
+    .fa-thumbs-up {
+      transform: rotate(180deg);
+    }
+  }
+  .zmg-thumbs-up-value {
+    line-height: $zmg-progress-bar-height;
+    padding: 0 1rem;
+  }
+}
